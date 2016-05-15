@@ -537,6 +537,10 @@ function checkArgs (args, name, promise) {
  * @returns {String}
  */
 function getFunctionName (fn) {
+  if (fn.name) {
+    return fn.name;
+  }
+
   var name = fn.toString();
   name = name.substr('function '.length);
   name = name.substr(0, name.indexOf('('));
